@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--begin::Web font -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+    <script>
+			WebFont.load({
+				google: {
+					"families": ["Poppins:300,400,500,600,700", "Roboto:300,400,500,600,700"]
+				},
+				active: function() {
+					sessionStorage.fonts = true;
+				}
+			});
+    </script>
+
+    <!--end::Web font -->
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</head>
+<body class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--fixed m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default">
+    
+    <div class="m-grid m-grid--hor m-grid--root m-page">
+        @RenderBody()
+        @*<hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - WMS Application</p>
+        </footer>*@
+    </div>
+
+   
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+@if (TempData["Success"] != null)
+{
+    <script>
+            $(document).ready(function () {
+                toastr.success("@TempData["Success"]");
+            });
+    </script>
+}
+@if (TempData["Error"] != null)
+{
+    <script>
+            $(document).ready(function () {
+                toastr.error("@TempData["Error"]");
+            });
+    </script>
+}
