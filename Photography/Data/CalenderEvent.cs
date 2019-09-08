@@ -12,25 +12,17 @@ namespace Photography.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class EmployeeMaster
+    public partial class CalenderEvent
     {
-        public int EmployeeId { get; set; }
-        public string EmplyeeUniqueID__UniqueId__UniqueId__UniqueID_______ { get; set; }
-        public string Name { get; set; }
-        public string MobileNo { get; set; }
-        public string EmailId { get; set; }
-        public string Password { get; set; }
-        public Nullable<int> UserType { get; set; }
-        public string Address1 { get; set; }
-        public string Address2 { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
+        public int CalenderID { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public Nullable<System.DateTime> EventStart { get; set; }
+        public Nullable<System.DateTime> EventEnd { get; set; }
+        public string BackgroundColor { get; set; }
         public string CreatedBy { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public string ModifiedBy { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
-        public Nullable<int> DailyWages { get; set; }
-        public Nullable<int> HalfDayWages { get; set; }
-        public Nullable<int> Status { get; set; }
     }
 }

@@ -25,6 +25,9 @@ namespace Photography.Data
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<CalenderEvent> CalenderEvents { get; set; }
+        public virtual DbSet<ClientMaster> ClientMasters { get; set; }
         public virtual DbSet<EmployeeMaster> EmployeeMasters { get; set; }
+        public virtual DbSet<ProductMaster> ProductMasters { get; set; }
     }
 }
